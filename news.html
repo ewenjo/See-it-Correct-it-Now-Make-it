@@ -1,11 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@@ -4,8 +4,209 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    body{
+      font-family: alternate-gothic-no-3-d, sans-serif;
+      padding: 0px;
+      margin: 0px;
+      position: relative;
+    }
+    aside {
+      width: 20%;
+      min-width: 275px;
+      height: 1009px;
+      float: left;
+      text-align: center;
+      color: #423a36;
+      background-color: white;
+      padding-right: 100px;
+      /*Temp*/
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
+    }
+    aside ul {
+      display: inline;
+      padding-left: 40px;
+      max-width: 400px;
+      margin-right: 40px;
+      margin-top: 300px;
+      text-decoration: none;
+      list-style-type: none;
+    }
+    aside .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    ul{
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+      padding-left: 70px;
+    }
+    .prev{
+      top: 468px;
+    }
+    .page{
+      color: white;
+      position: absolute;
+      right: 10px;
+      width: 110px;
+      background-color: rgba(0, 0, 0, 0.37);
+      padding: 5px;
+      text-decoration: none;
+    }
+    #asideRight{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      padding-left: 100px;
+      padding-right: 0px;
+    }
+    #socialMediaContainer{
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 50px;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      /* Temp. Just wanna see the border*/
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
+    }
+    .socialIcon{
+      width: 80%;
+      padding: 5px;
+      padding-bottom: 23px;
+      padding-top: 23px;
+    }
+    #mainHeading{
+      float: left;
+      padding: 0px;
+      margin: 0px;
+      padding-left: 3%;
+      margin-top: 45px;
+      width: 878px;
+      /*Temp*/
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
+    }
+    #mainOver{
+      margin: 0px;
+      margin-top: 20px;
+      padding: 0px;
+      font-size: 30px;
+      font-style: italic;
+    }
+    #mainUnder{
+      padding: 0px;
+      margin: 0;
+      margin-top: 0px;
+      font-size: 90px;
+      padding-left: 0px;
+      margin-left: 0px;
+    }
+    #newsContainer{
+      position: absolute;
+      top: 210px;
+      left: 420px;
+      padding: 0px;
+      margin: 0px;
+      width: 990px;
+      height: 730px;
+      /*Temp*/
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
+    }
+    .square{
+      float: right;
+      font-size: 30px;
+      margin: 8px;
+      padding: 0px;
+      width: 440px;
+      height: 337px;
+      /* Temp. Just wanna see the border*/
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
+    }
+  </style>
 </head>
 <body>
   
+  <aside>
+    <img src="https://www.uat.edu/themes/uat/images/uat-logo.png">
+    <h1>LEARN.<br>EXPERIENCE.<br>INNOVATE.</h1>
+
+    <div class="nav">
+      <ul>
+        <li><h2>REQUEST INFO</h2></li>
+        <li><h2>(800) 658-5744</h2></li>
+        <li><h2>APPLY TO UAT</h2></li>
+        <li><h2>MENU</h2></li>
+      </ul>
+    </div>
+  </aside>
+
+  <aside id="asideRight">
+    <img src="https://www.uat.edu/themes/uat/images/uat-logo.png">
+    <h1>2625 W. BASELINE RD.<br>TEMPE, AZ 85283-1056</h1>
+    
+    <div id="socialMediaContainer">
+      <a href="https://www.facebook.com/UATedu"><img class="socialIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEU6VZ////81Up0yT5xgc61+jbsvTZyXo8hFXaOirM0nSJmlrs7O1OUkRpkfQ5c1UZ1oerKHlcDp6/M9WKHHzeHV2ulxgravt9Td4Ozl6PGDkb7ByN5YbatQZ6j29/q3v9h2hrhMY6aQnMSsAnKHAAAC70lEQVR4nO3caXLiMBRFYdoihhhsQ5jDlPT+F9mdqv7bRrYQ7z7XOQug9BUWHiQzmRARERERERERERERERERqVe0IZQPCtaDHFwo62Yz/VrP3jtbrH0Sy7rYH46/YtpV1oPtX6jCbBel+2npThjq/Taa51AYmrdTH583YdHsP/r5nAnLTa/j05+w+ezv8yRsq/MQoB9hmPeegb6E5eU2DOhFWK4G+rwIw3CgD2G4Dge6ELaboXPQi7CJu4nwK6zvKUAHwvCVBHQgrFMmoQdh4jGqL2wviUB5YRP/uMKnsJ2mAtWF9XLkwjblcs2FsDqMXZh6LpQXhn06UFtYpZ7t5YX1wEczboTF/AlAaWFYP0OovPZU9pmGt9194W79sIq/Jt2uqqrytwbcxJ4NT9e6tR7soEIk8N749E2K7zjgubEe6dAi75yOboGxwrnTQ/RvRZTwIHy6e1SccF5Yj3N4UcJjbT3MhKKEh9J6mAlFCZWvyR4WJXxDqBxChPohRKgfQoT6IUSoH0KE+iFEqB9ChPqNQ1h0vKJcxWwt/aofvelsDFzNOlpECO9dH/DT+8ZUWMYgErNdfXuB8Ga7RPwCofHy2wuE59EfpQvbH9MXCNejF65st2q8QPhtu5Mhv/BmfE2TX/hhvGMqv3BpvBslv/BuvGUqv3A2+nloff+YX3gx3rmYX2j9CCC78Ga9NzO78GS9dTG7cDv679B8c2Z24e/R/9LsRy+8Wm/kzy60nobZhdb3TvmF9u8e5hYaP0p8gfB99PPQ/l2F3MKp+StDuYXWvuxC60eJ+YXm907ZhQJ/NlA+4d9ZOrrbH6WTzbyjmL+D/Oz6BNsl/H8V/y9E7TYpOz7BGveoceyn6QohQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLUDyFC/RAi1A8hQv0QItQPIUL9ECLs0R8aFUYEFLSeAgAAAABJRU5ErkJggg=="></a>
+      <img class="socialIcon" src="data:image/png;base64,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">
+      <img class="socialIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png">
+      <img class="socialIcon" src="data:image/png;base64,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">
+      <img class="socialIcon" src="https://i.pinimg.com/originals/31/23/9a/31239a2f70e4f8e4e3263fafb00ace1c.png">
+      <img class="socialIcon" src="https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/twitch-512.png">
+      <img class="socialIcon" src="https://i.pinimg.com/564x/31/d3/92/31d392b65b36af0b581c8af0b41b451e.jpg">
+      <img class="socialIcon" src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/91_Discord_logo_logos-512.png">
+      <img class="socialIcon" src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_reddit-512.png">
+      <img class="socialIcon" src="data:image/png;base64,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">
+      <img class="socialIcon" src="https://seeklogo.com/images/T/tiktok-app-icon-logo-0F5AD7AE01-seeklogo.com.png">
+    </div>
+
+    <div class="nav2">
+      <ul>
+        <li><h2>Degrees</h2></li>
+        <li><h2>Admissions</h2></li>
+        <li><h2>Academics</h2></li>
+        <li><h2>Student Experience</h2></li>
+        <li><h2>About UAT</h2></li>
+        <li><h2>News & Events</h2></li>
+        <li><h2>Careers</h2></li>
+        <li><h2>Apply</h2></li>
+        <li><h2>Request Info</h2></li>
+      </ul>
+    </div>
+  </aside>
+
+  <a href="explore.html" class="prev page"><p>PREV PAGE 🡒</p></a>
+
+  <div id="mainHeading">
+    <h1 id="mainOver">Shaping tomorrow</h1>
+    <h2 id="mainUnder">CHANGING TODAY</h2>  
+  </div>
+
+  <div id="newsContainer">
+    <ul>
+      <li class="square">
+        Something
+      </li>
+      <li class="square">
+        Something
+      </li>
+      <li class="square">
+        Something
+      </li>
+      <li class="square">
+        Something
+      </li>
+    </ul>
+  </div>
 </body>
 </html>

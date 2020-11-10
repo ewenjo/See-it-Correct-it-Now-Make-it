@@ -1,21 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+@@ -5,8 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>University of Advancing Technology</title>
   <style>
+    html{
+      height: 100%;
+    }
     body{
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family: alternate-gothic-no-3-d, sans-serif;
+      padding: 0px;
+      margin: 0px;
+      position: relative;
+      background-color: lightgray;
     }
     ul{
       list-style-type: none;
-      margin: 0px;
-      padding: 0px;
+@ -15,28 +22,50 @@
       padding-left: 70px;
       border-width: 2px;
     }
     li{
+    a{
+      color: black;
+      text-decoration: none;
+    }
+    aside {
+      width: 20%;
+      min-width: 275px;
+      height: 1009px;
       float: left;
       font-size: 30px;
       margin: 0px;
@@ -23,6 +35,12 @@
       height: 290px;
       /* Temp. Just wanna see the border */
       border-width: 2px;
+      text-align: center;
+      color: #423a36;
+      background-color: white;
+      padding-right: 100px;
+      /*Temp*/
+      border-width: 1px;
       border-style: solid;
       border-color: black;
     }
@@ -30,57 +48,140 @@
       width: 50px;
       float: left;
       padding-right: 30px;
+    aside ul {
+      display: inline;
+      padding-left: 40px;
+      max-width: 400px;
+      margin-right: 40px;
+      margin-top: 300px;
+      text-decoration: none;
+      list-style-type: none;
+    }
+    aside .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     #mainHeading{
       float: left;
       padding: 0px;
+      padding-left: 3%;
       margin: 0px;
+      /*Temp*/
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
     }
     #mainOver{
+      margin-top: 20px;
       margin-bottom: 0px;
       padding: 0px;
       font-size: 100px;
-    }
-    #mainUnder{
-      margin-top: 0px;
-      font-size: 30px;
-      padding-left: 2%;
-      font-style: italic;
+@ -49,12 +78,53 @@
     }
     #degreeContainer{
       clear: both;
+      position: absolute;
+      top: 200px;
+      left: 412px;
+      width: 1420px;
+      height: 740px;
+      /* Temp. Just wanna see the border */
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
+    }
+    .next{
+      top: 405px;
+    }
+    .prev{
+      top: 468px;
+    }
+    .page{
+      color: white;
+      position: absolute;
+      right: 10px;
+      width: 110px;
+      background-color: rgba(0, 0, 0, 0.37);
+      padding: 5px;
+      text-decoration: none;
+    }
+    .square{
+      position: relative;
       float: left;
+      font-size: 30px;
+      margin: 0px;
+      width: 440px;
+      height: 337px;
+      /* Temp. Just wanna see the border */
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
     }
     .degreeIcons{
       width: 40px;
       height: 40px;
+      position: absolute;
+      top: 14%;
+      left: 20%;
+      height: 80%;
       visibility: visible;
+      /* Temp. Just wanna see the border */
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
     }
     .center{
       display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .degreeHeading{
-      margin: 0px;
+@ -66,69 +136,173 @@
       padding: 0px;
       text-align: center;
+    }
+    .extenstionBox{
+      position: absolute;
+      top: 0px;
+      left: 0px;
     }
     .degreeExtension{
       margin: 0px;
       padding: 0px;
       padding-left: 18%;
+      padding-left: 10%;
+      margin-top: 6px;
+      font-size: 30px;
       visibility: hidden;
+    }
+    .square:hover .degreeIcons{
+      visibility: hidden;
+    }
+    .square:hover .degreeExtension{
+      visibility: visible;
     }
   </style>
 </head>
 <body>
   <img id="logo" src="https://www.uat.edu/themes/uat/images/uat-logo.png">
+  <a href="news.html" class="next page"><p>NEXT PAGE 🡒</p></a>
+  <a href="home.html" class="prev page"><p>PREV PAGE 🡒</p></a>
+  <aside>
+    <img src="https://www.uat.edu/themes/uat/images/uat-logo.png">
+    <h1>LEARN.<br>EXPERIENCE.<br>INNOVATE.</h1>
+
+    <div class="nav">
+      <ul>
+        <li><h2>REQUEST INFO</h2></li>
+        <li><h2>(800) 658-5744</h2></li>
+        <li><h2>APPLY TO UAT</h2></li>
+        <li><h2>MENU</h2></li>
+      </ul>
+    </div>
+  </aside>
   <div id="mainHeading">
     <h1 id="mainOver">Find your fit</h1>
     <h2 id="mainUnder">Explore our degrees</h2>  
   </div>
 
+  <!--
   <div id="degreeContainer">
     <ul>
       <li class="square">
@@ -90,6 +191,13 @@
         <ul class="degreeExtension">+ Technology Innovation (MS)</ul>
         <ul class="degreeExtension">+ Technology Leadership (MS)</ul>
         <ul class="degreeExtension">+ Technology Studies</ul>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <ul class="degreeExtension">+ Business Tachnology</ul>
+          <ul class="degreeExtension">+ Technology Innovation (MS)</ul>
+          <ul class="degreeExtension">+ Technology Leadership (MS)</ul>
+          <ul class="degreeExtension">+ Technology Studies</ul>
+        </div>
       </li>
       <li class="square">
         <h3 class="degreeHeading">Creation & Simulation</h3>
@@ -98,7 +206,79 @@
         <ul class="degreeExtension">+ Human Computer Interaction</ul>
         <ul class="degreeExtension">+ Robotics & Embedded Systems</ul>
         <ul class="degreeExtension">+ Virtual Reality</ul>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <ul class="degreeExtension">+ Digital Maker & Fabricator</ul>
+          <ul class="degreeExtension">+ Human Computer Interaction</ul>
+          <ul class="degreeExtension">+ Robotics & Embedded Systems</ul>
+          <ul class="degreeExtension">+ Virtual Reality</ul>
+        </div>
+        </li>
+      <li class="square">
+        <h3 class="degreeHeading">Cyber Security</h3>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <ul class="degreeExtension">+ Cyber Security (MS)</ul>
+          <ul class="degreeExtension">+ Network Engineering</ul>
+          <ul class="degreeExtension">+ Network Security</ul>
+          <ul class="degreeExtension">+ Technology Forensics</ul>
+        </div>
       </li>
+      <li class= "square">
+        <h3 class="degreeHeading">Digital Arts</h3>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <ul class="degreeExtension">+ Advertising Art</ul>
+          <ul class="degreeExtension">+ Digital Marketing</ul>
+          <ul class="degreeExtension">+ Digital Video</ul>
+        </div>
+      </li>
+      <li class="square">
+        <h3 class="degreeHeading">Game Studies</h3>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <ul class="degreeExtension">+ Game Art & Animation</ul>
+          <ul class="degreeExtension">+ Game Design</ul>
+          <ul class="degreeExtension">+ Game Production (MS)</ul>
+          <ul class="degreeExtension">+ Game Programming</ul>
+        </div>
+      </li>
+      <li class="square">
+        <h3 class="degreeHeading">Software Engineering</h3>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <ul class="degreeExtension">+ Advancing Computer Science</ul>
+          <ul class="degreeExtension">+ Artificial Intelligence</ul>
+          <ul class="degreeExtension">+ Data Science</ul>
+          <ul class="degreeExtension">+ Software Engineering (MS)</ul>
+        </div>
+      </li>
+    </ul>
+  </div>-->
+
+  <!-- Doesn't work -->
+  <div id="degreeContainer">
+    <ul>
+      <li class="square">
+        <h3 class="degreeHeading">Business & Innovation</h3>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <a href=""><ul class="degreeExtension">+ Business Tachnology</ul></a>
+          <a href=""><ul class="degreeExtension">+ Technology Innovation (MS)</ul></a>
+          <a href=""><ul class="degreeExtension">+ Technology Leadership (MS)</ul></a>
+          <a href=""><ul class="degreeExtension">+ Technology Studies</ul></a>
+        </div>
+      </li>
+      <a<li class="square">
+        <h3 class="degreeHeading">Creation & Simulation</h3>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <a href=""><ul class="degreeExtension">+ Digital Maker & Fabricator</ul></a>
+          <a href=""><ul class="degreeExtension">+ Human Computer Interaction</ul></a>
+          <a href=""><ul class="degreeExtension">+ Robotics & Embedded Systems</ul></a>
+          <a href=""><ul class="degreeExtension">+ Virtual Reality</ul></a>
+        </div>
+        </li>
       <li class="square">
         <h3 class="degreeHeading">Cyber Security</h3>
         <img class="degreeIcons center" src="https://www.digopaul.com/wp-content/uploads/related_images/2015/09/08/placeholder_2.jpg">
@@ -106,6 +286,13 @@
         <ul class="degreeExtension">+ Network Engineering</ul>
         <ul class="degreeExtension">+ Network Security</ul>
         <ul class="degreeExtension">+ Technology Forensics</ul>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <a href=""><ul class="degreeExtension">+ Cyber Security (MS)</ul></a>
+          <a href=""><ul class="degreeExtension">+ Network Engineering</ul></a>
+          <a href=""><ul class="degreeExtension">+ Network Security</ul></a>
+          <a href=""><ul class="degreeExtension">+ Technology Forensics</ul></a>
+        </div>
       </li>
       <li class= "square">
         <h3 class="degreeHeading">Digital Arts</h3>
@@ -113,6 +300,12 @@
         <ul class="degreeExtension">+ Advertising Art</ul>
         <ul class="degreeExtension">+ Digital Marketing</ul>
         <ul class="degreeExtension">+ Digital Video</ul>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <a href=""><ul class="degreeExtension">+ Advertising Art</ul></a>
+          <a href=""><ul class="degreeExtension">+ Digital Marketing</ul></a>
+          <a href=""><ul class="degreeExtension">+ Digital Video</ul></a>
+        </div>
       </li>
       <li class="square">
         <h3 class="degreeHeading">Game Studies</h3>
@@ -121,6 +314,13 @@
         <ul class="degreeExtension">+ Game Design</ul>
         <ul class="degreeExtension">+ Game Production (MS)</ul>
         <ul class="degreeExtension">+ Game Programming</ul>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <a href=""><ul class="degreeExtension">+ Game Art & Animation</ul></a>
+          <a href=""><ul class="degreeExtension">+ Game Design</ul></a>
+          <a href=""><ul class="degreeExtension">+ Game Production (MS)</ul></a>
+          <a href=""><ul class="degreeExtension">+ Game Programming</ul></a>
+        </div>
       </li>
       <li class="square">
         <h3 class="degreeHeading">Software Engineering</h3>
@@ -129,8 +329,13 @@
         <ul class="degreeExtension">+ Artificial Intelligence</ul>
         <ul class="degreeExtension">+ Data Science</ul>
         <ul class="degreeExtension">+ Software Engineering (MS)</ul>
+        <img class="degreeIcons center" src="https://wiki.dave.eu/images/4/47/Placeholder.png">
+        <div class="extensionBox">
+          <a href=""><ul class="degreeExtension">+ Advancing Computer Science</ul></a>
+          <a href=""><ul class="degreeExtension">+ Artificial Intelligence</ul></a>
+          <a href=""><ul class="degreeExtension">+ Data Science</ul></a>
+          <a href=""><ul class="degreeExtension">+ Software Engineering (MS)</ul></a>
+        </div>
       </li>
     </ul>
   </div>
-</body>
-</html>

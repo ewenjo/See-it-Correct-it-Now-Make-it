@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>University of Advancing Technology</title>
 </head>
+
 <body>
   <style>
     html {
       height: 100%;
+      box-sizing: border-box;
     }
 
     body {
@@ -30,14 +33,25 @@
     }
 
     aside {
-      width: 20%;
-      min-width: 275px;
       height: 100%;
       float: left;
-      text-align: center;
       color: #423a36;
       background-color: white;
-      margin-right: 100px;
+    }
+
+    aside.sidebar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 350px;
+    }
+
+    aside.navigation {
+      min-width: 150px;
+      /* width: 15%; */
+      background-color: #222;
+      color: white;
+      padding-right: 20px;
     }
 
     aside .nav {
@@ -46,32 +60,65 @@
       align-items: center;
     }
 
-    aside ul {
+    aside.sidebar .nav {
+      height: 100%;
+    }
+
+    aside:not(.navigation) ul {
       max-width: 400px;
       margin-right: 40px;
-      margin-top: 300px;
+      position: absolute;
+      bottom: 10px;
       text-decoration: none;
       list-style-type: none;
+    }
+
+    .navigation ul {
+      text-decoration: none;
+      list-style-type: none;
+    }
+
+    .nav input {
+      padding: 10px;
+      border-radius: 5px;
     }
 
     section {
       display: flex;
       justify-content: center;
       align-items: center;
-      
+
       color: white;
-      background-color: #2fca9c;
+      -webkit-animation: bgcolor 20s infinite;
+      animation: bgcolor 20s infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate;
       height: 100%;
     }
 
     section .hero {
-      
+      width: 80%;
+    }
+
+    section .hero button {
+      padding: 20px 30px 20px 30px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      margin-top: 15px;
+    }
+
+    section .hero button:hover {
+      background-color: #3c3c3c;
     }
 
     section .hero h1 {
       margin: 0;
       max-width: 1200px;
-      font-size: 70px;
+      font-size: 60px;
     }
 
     section .hero h2 {
@@ -86,20 +133,145 @@
       font-weight: 200;
       text-decoration: underline;
     }
+
+    @keyframes bgcolor {
+      0% {
+        background-color: #45a3e5
+      }
+
+      30% {
+        background-color: #24b844
+      }
+
+      60% {
+        background-color: #b963e1
+      }
+
+      90% {
+        background-color: #f33958
+      }
+
+      100% {
+        background-color: #864cbf
+      }
+    }
+
+    @media screen and (max-width: 1700px) {
+      section .hero h1 {
+        font-size: 50px;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      aside.navigation {
+        display: none;
+      }
+
+      aside.sidebar {
+        min-width: 200px;
+      }
+
+      aside.sidebar img {
+        width: 100px;
+      }
+
+      aside.sidebar h1,
+      aside.sidebar h2 {
+        font-size: 20px;
+      }
+
+      section .hero h1 {
+        font-size: 50px;
+      }
+
+      section .hero h2 {
+        font-size: 40px;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      aside.sidebar {
+        width: 100px;
+        min-width: 100px;
+      }
+
+      aside.sidebar h1,
+      aside.sidebar h2 {
+        font-size: 13px;
+      }
+
+      aside.sidebar img {
+        width: 75px;
+      }
+
+      aside:not(.navigation) ul {
+        position: unset;
+      }
+
+      section .hero h1,
+      section .hero h2 {
+        font-size: 20px;
+      }
+    }
+
   </style>
 
-  <a href="explore.html" class="next-page"><p>NEXT PAGE 🡒</p></a>
+  <aside class="navigation">
+    <div class="nav">
+      <ul>
+        <li>
+          <h3>DEGREES</h3>
+        </li>
+        <li>
+          <h3>ADMISSIONS</h3>
+        </li>
+        <li>
+          <h3>ACADEMICS</h3>
+        </li>
+        <li>
+          <h3>STUDENT EXPERIENCE</h3>
+        </li>
+        <li>
+          <h3>ABOUT UAT</h3>
+        </li>
+        <li>
+          <h3>NEWS & EVENTS</h3>
+        </li>
+        <li>
+          <h3>LOGIN</h3>
+        </li>
+        <li>
+          <h3>APPLY</h3>
+        </li>
+        <li>
+          <h3>REQUEST INFO</h3>
+        </li>
+        <li>
+          <h3>(800) 658-5744</h3>
+        </li>
+        <li><input type="text" placeholder="Search here..." \></li>
+      </ul>
+    </div>
+  </aside>
 
-  <aside>
+  <aside class="sidebar">
     <img src="https://www.uat.edu/themes/uat/images/uat-logo.png">
     <h1>LEARN.<br>EXPERIENCE.<br>INNOVATE.</h1>
 
     <div class="nav">
       <ul>
-        <li><h2>REQUEST INFO</h2></li>
-        <li><h2>(800) 658-5744</h2></li>
-        <li><h2>APPLY TO UAT</h2></li>
-        <li><h2>MENU</h2></li>
+        <li>
+          <h2>REQUEST INFO</h2>
+        </li>
+        <li>
+          <h2>(800) 658-5744</h2>
+        </li>
+        <li>
+          <h2>APPLY TO UAT</h2>
+        </li>
+        <li>
+          <h2>MENU</h2>
+        </li>
       </ul>
     </div>
   </aside>
@@ -109,12 +281,29 @@
     <div class="hero">
 
       <h2><i>WE ARE UAT</i></h2>
-      <h1>THINK OUTSIDE THE PIXLES</h1>
+      <h1>THINK OUTSIDE THE <span id="randomWord">PIXELS</span></h1>
 
-      <p>I WOULD LIKE A DEGREE IN...</p>
+      <button>Get started today!</button>
+      <!-- <p>I WOULD LIKE A DEGREE IN...</p> -->
 
     </div>
   </section>
-  
+
+  <script>
+    const names = ['PIXELS', 'FIREWALL', 'QUBIT'];
+
+    let current = 1;
+
+    setInterval(() => {
+      const element = document.getElementById('randomWord');
+      element.innerText = names[current];
+      current++;
+
+      if (current === 3) current = 0;
+    }, 2000);
+
+  </script>
+
 </body>
+
 </html>
